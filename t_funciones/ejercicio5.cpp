@@ -2,10 +2,8 @@
 #include "ctime"
 #include "cstdlib"
 using namespace std;
-int main(){
-    int mc,mp,c=0,p=0;
-    while (p<3 && c<3){
-        cout<<endl<<"Introduce tu jugada (1. R, 2. P, 3. S): "; cin>>mp;
+void yankenpo(int &mc, int &c, int &p, int &mp){
+    cout<<endl<<"Introduce tu jugada (1. R, 2. P, 3. S): "; cin>>mp;
         srand(time(0));
         mc=rand()%3 +1;
         cout<<"PC: "<<mc<<endl;
@@ -36,6 +34,11 @@ int main(){
                 p++;
             }
         }
+}
+int main(){
+    int mc,mp,c=0,p=0;
+    while (p<3 && c<3){
+        yankenpo(mc,c,p,mp);
         cout<<endl<<"PUNTOS --- "<<"PC: "<<c<<" Player: "<<p<<endl;
     }
     if (p==3){
